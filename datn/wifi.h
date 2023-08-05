@@ -1,8 +1,8 @@
 #ifndef WIFI_H_
 #define WIFI_H_
 
-#define STA_SSID        "DATN"
-#define STA_PASSWORD    "khongchoxaichua"
+#define STA_SSID        "myssid"
+#define STA_PASSWORD    "mypsw"
 #define STA_IP          "192.168.43.51"
 #define STA_GW          "192.168.43.1"
 #define STA_MASK        "255.255.255.0"
