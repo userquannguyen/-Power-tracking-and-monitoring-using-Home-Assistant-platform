@@ -125,7 +125,7 @@ static void wifi_sta_event_handler(void* arg, esp_event_base_t event_base, int32
                 ESP_LOGI(TAG1, "Station connected with IP: "IPSTR", GW: "IPSTR", Mask: "IPSTR".",
                     IP2STR(&event->ip_info.ip),
                     IP2STR(&event->ip_info.gw),
-                    IP2STR(&event->ip_info.netmask));
+                    IP2STR(&event->ip_info.netmask)); //IP2STR: Convert an IP number into it’s string representation.
                 ESP_LOGI(TAG1, "Got IP: Starting MQTT Client\n");
                 mqtt_app_start();
                 break;
@@ -199,7 +199,7 @@ void STA_INIT_IP(char *ssid, char *password, char *ip, char *gw, char *nmask) {
     else ESP_LOGI(TAG1, "esp_netif_dhcpc_stop ERROR");
 
     esp_netif_ip_info_t IP_settings_sta;
-    IP_settings_sta.ip.addr=ipaddr_addr(ip);
+    IP_settings_sta.ip.addr=ipaddr_addr(ip); //ipaddr_addr: return IP addr as order
     IP_settings_sta.netmask.addr=ipaddr_addr(nmask);
     IP_settings_sta.gw.addr=ipaddr_addr(gw);
     esp_netif_set_ip_info(esp_netif_sta, &IP_settings_sta);
